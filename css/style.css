@@ -1,0 +1,57 @@
+:root {
+    --primary: #58CC02;
+    --primary-dark: #46A302;
+    --surface: #FFFFFF;
+    --bg-app: #F7F9FC;
+    --text-main: #2B3648;
+    --text-sub: #777;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; font-family: 'Nunito', sans-serif; background: var(--bg-app); color: var(--text-main); height: 100vh; overflow: hidden; }
+
+#app-container { width: 100%; height: 100%; display: flex; flex-direction: column; position: relative; max-width: 600px; margin: 0 auto; background: white; }
+#main-view { flex: 1; overflow-y: auto; padding-bottom: 90px; scroll-behavior: smooth; }
+
+/* HEADER */
+.app-header { background: var(--surface); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+.user-info { display: flex; align-items: center; gap: 10px; }
+.avatar-circle { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid var(--primary); }
+.avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+.streak-badge { background: #FFF4E6; color: #FF9600; padding: 6px 12px; border-radius: 20px; font-weight: 800; display: flex; align-items: center; gap: 5px; border: 2px solid #FFE0B2; }
+
+/* HOME CARDS */
+.section-label { padding: 20px 20px 10px; font-weight: 800; color: #BBB; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+.lesson-card { background: var(--surface); margin: 0 20px 16px; padding: 16px; border-radius: 16px; border: 2px solid #F0F0F0; box-shadow: 0 4px 0 #E5E5E5; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: 0.1s; }
+.lesson-card:active { transform: translateY(4px); box-shadow: none; border-color: var(--primary); }
+.lesson-card.done .icon-box { background: var(--primary); color: white; }
+.icon-box { width: 55px; height: 55px; background: #E5F6D5; color: #46A302; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; }
+
+/* CHAT UI */
+.chat-stream { padding: 20px; padding-bottom: 200px; display: flex; flex-direction: column; gap: 20px; }
+.bubble-row { display: flex; gap: 10px; align-items: flex-end; animation: popIn 0.3s ease; }
+.avatar-small { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; background: #ddd; flex-shrink: 0; }
+.avatar-small img { width: 100%; height: 100%; object-fit: cover; }
+.bubble { max-width: 75%; padding: 12px 16px; border-radius: 18px; font-size: 1rem; line-height: 1.5; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.bubble.teacher { background: white; border: 2px solid #F0F0F0; border-bottom-left-radius: 4px; }
+.bubble.user { background: var(--primary); color: white; border-bottom-right-radius: 4px; margin-left: auto; }
+
+/* ACTION AREA */
+.action-container { position: absolute; bottom: 80px; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px; border-top: 1px solid #eee; display: flex; flex-direction: column; align-items: center; z-index: 15; }
+.hint-box { text-align: center; margin-bottom: 15px; }
+.hint-en { font-weight: 700; font-size: 1.1rem; }
+.hint-ipa { color: #888; font-family: monospace; font-size: 0.9rem; }
+.mic-btn-big { width: 65px; height: 65px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 4px 0 var(--primary-dark); cursor: pointer; transition: 0.1s; }
+.mic-btn-big.listening { background: #FF4B4B; box-shadow: 0 4px 0 #D60000; animation: pulse 1.5s infinite; }
+
+/* BOTTOM NAV */
+.bottom-nav { position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: white; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #F0F0F0; z-index: 20; }
+.nav-btn { display: flex; flex-direction: column; align-items: center; color: #AFB4C0; background: none; border: none; font-size: 0.75rem; font-weight: 700; gap: 4px; }
+.nav-btn.active { color: var(--primary); }
+.nav-btn i { font-size: 1.4rem; }
+
+/* UTILS */
+.word-correct { color: #A7F3D0; font-weight: bold; }
+.word-wrong { color: #FECACA; text-decoration: underline; font-weight: bold; }
+@keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
