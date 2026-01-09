@@ -3,57 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NativeFlow</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>NativeMaster Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="mobile-app">
+    <div class="mobile-frame">
         
-        <header class="top-bar">
-            <div class="user-info">
-                <div class="avatar"><i class="fas fa-user-astronaut"></i></div>
-                <div>
-                    <h4 id="user-name">Welcome back!</h4>
-                    <span class="badge">Level: Intermediate</span>
+        <header class="app-header">
+            <div class="header-left">
+                <div class="avatar-ring">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User">
+                    <div class="status-dot"></div>
+                </div>
+                <div class="header-text">
+                    <span class="greeting">Good Evening,</span>
+                    <h3 class="username">Alex Nguyen</h3>
                 </div>
             </div>
-            <div class="streak-counter">
-                <i class="fas fa-fire"></i> 12
+            <div class="header-right">
+                <div class="streak-pill">
+                    <i class="fas fa-fire"></i> 12
+                </div>
             </div>
         </header>
 
-        <main id="app-container" class="content-area">
+        <main id="app-content">
             </main>
 
-        <nav class="bottom-nav">
-            <button class="nav-item active" onclick="app.navigate('home')">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
+        <nav class="glass-nav">
+            <button class="nav-btn active" onclick="app.navigate('home')">
+                <i class="fas fa-compass"></i>
             </button>
-            <button class="nav-item" onclick="app.navigate('topics')">
-                <i class="fas fa-layer-group"></i>
-                <span>Topics</span>
-            </button>
-            <button class="nav-item" onclick="app.navigate('shadowing')">
-                <i class="fas fa-headphones"></i>
-                <span>Listen</span>
-            </button>
-            <button class="nav-item" onclick="app.navigate('profile')">
+            <button class="nav-btn" onclick="app.navigate('stats')">
                 <i class="fas fa-chart-pie"></i>
-                <span>Profile</span>
+            </button>
+            <button class="nav-btn fab-btn" onclick="app.quickPractice()">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <button class="nav-btn" onclick="app.navigate('topics')">
+                <i class="fas fa-book-open"></i>
+            </button>
+            <button class="nav-btn" onclick="app.navigate('profile')">
+                <i class="fas fa-user-circle"></i>
             </button>
         </nav>
 
-        <div id="practice-modal" class="modal-overlay hidden">
-            <div class="modal-header">
-                <button class="icon-btn" onclick="app.closeModal()"><i class="fas fa-chevron-down"></i></button>
-                <h3 id="modal-title">Practice</h3>
-                <div style="width: 32px"></div>
+        <div id="practice-overlay" class="overlay hidden">
+            <div class="practice-header">
+                <button class="btn-icon" onclick="app.closePractice()"><i class="fas fa-chevron-down"></i></button>
+                <span class="live-badge">LIVE PRACTICE</span>
+                <button class="btn-icon"><i class="fas fa-cog"></i></button>
             </div>
-            <div class="modal-body" id="modal-content">
+            
+            <div class="practice-body" id="practice-container">
                 </div>
+
+            <div class="practice-controls">
+                <div id="live-transcript" class="transcript-box">Listening...</div>
+                <button id="mic-trigger" class="mic-huge" onclick="app.toggleMic()">
+                    <i class="fas fa-microphone"></i>
+                    <div class="pulse-ring"></div>
+                </button>
+            </div>
         </div>
 
     </div>
