@@ -1,65 +1,90 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NativeMaster Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>NativeFlow V5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="mobile-frame">
-        
+
         <header class="app-header">
             <div class="header-left">
                 <div class="avatar-ring">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User">
+                    <img id="header-avatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User">
                     <div class="status-dot"></div>
                 </div>
                 <div class="header-text">
-                    <span class="greeting">Good Evening,</span>
-                    <h3 class="username">Alex Nguyen</h3>
+                    <span class="greeting">Welcome back,</span>
+                    <h3 class="username" id="display-name">Learner</h3>
                 </div>
             </div>
             <div class="header-right">
                 <div class="streak-pill">
-                    <i class="fas fa-fire"></i> 12
+                    <i class="fas fa-fire"></i> <span id="streak-count">0</span>
                 </div>
             </div>
         </header>
 
         <main id="app-content">
-            </main>
+        </main>
 
         <nav class="glass-nav">
-            <button class="nav-btn active" onclick="app.navigate('home')">
-                <i class="fas fa-compass"></i>
-            </button>
-            <button class="nav-btn" onclick="app.navigate('stats')">
-                <i class="fas fa-chart-pie"></i>
-            </button>
-            <button class="nav-btn fab-btn" onclick="app.quickPractice()">
-                <i class="fas fa-microphone"></i>
-            </button>
-            <button class="nav-btn" onclick="app.navigate('topics')">
-                <i class="fas fa-book-open"></i>
-            </button>
-            <button class="nav-btn" onclick="app.navigate('profile')">
-                <i class="fas fa-user-circle"></i>
-            </button>
+            <button class="nav-btn active" onclick="app.navigate('home')"><i class="fas fa-compass"></i></button>
+            <button class="nav-btn" onclick="app.navigate('stats')"><i class="fas fa-chart-pie"></i></button>
+            <button class="nav-btn fab-btn" onclick="app.quickPractice()"><i class="fas fa-microphone"></i></button>
+            <button class="nav-btn" onclick="app.navigate('topics')"><i class="fas fa-book-open"></i></button>
+            <button class="nav-btn" onclick="app.navigate('profile')"><i class="fas fa-fingerprint"></i></button>
         </nav>
+
+        <div id="onboarding-overlay" class="overlay">
+            <div class="onboarding-content">
+                <div class="icon-brand"><i class="fas fa-wind"></i></div>
+                <h2>Thiết lập hồ sơ nói</h2>
+                <p>Để AI tối ưu lộ trình cho riêng bạn.</p>
+
+                <div class="input-group">
+                    <label>Tên bạn là gì?</label>
+                    <input type="text" id="inp-name" placeholder="Ví dụ: Minh Tuấn">
+                </div>
+
+                <div class="input-group">
+                    <label>Trình độ hiện tại?</label>
+                    <div class="select-options">
+                        <button class="opt-btn selected" onclick="app.selectLevel('Beginner', this)">Mới học</button>
+                        <button class="opt-btn" onclick="app.selectLevel('Intermediate', this)">Khá</button>
+                        <button class="opt-btn" onclick="app.selectLevel('Advanced', this)">Thành thạo</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Mục tiêu chính?</label>
+                    <div class="select-options vertical">
+                        <button class="opt-btn selected" onclick="app.selectGoal('Fluency', this)">🗣️ Phản xạ trôi
+                            chảy</button>
+                        <button class="opt-btn" onclick="app.selectGoal('Pronunciation', this)">🎙️ Chuẩn giọng bản
+                            xứ</button>
+                        <button class="opt-btn" onclick="app.selectGoal('Vocabulary', this)">📚 Mở rộng từ vựng</button>
+                    </div>
+                </div>
+
+                <button class="btn-primary-lg" onclick="app.finishOnboarding()">Bắt đầu ngay</button>
+            </div>
+        </div>
 
         <div id="practice-overlay" class="overlay hidden">
             <div class="practice-header">
                 <button class="btn-icon" onclick="app.closePractice()"><i class="fas fa-chevron-down"></i></button>
-                <span class="live-badge">LIVE PRACTICE</span>
+                <span class="live-badge">LIVE COACHING</span>
                 <button class="btn-icon"><i class="fas fa-cog"></i></button>
             </div>
-            
-            <div class="practice-body" id="practice-container">
-                </div>
-
+            <div class="practice-body" id="practice-container"></div>
             <div class="practice-controls">
                 <div id="live-transcript" class="transcript-box">Listening...</div>
                 <button id="mic-trigger" class="mic-huge" onclick="app.toggleMic()">
@@ -72,4 +97,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
