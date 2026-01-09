@@ -7,8 +7,10 @@
     "topic": "Social",
     "image": "https://cdn-icons-png.flaticon.com/512/3006/3006876.png",
     "dialogue": [
-      { "role": "teacher", "content": "Hi there! I am your new neighbor." },
-      { "role": "user", "target": "Nice to meet you I am Nam", "phonetic": "/naɪs tuː miːt juː/" }
+      { "role": "teacher", "content": "Hi there! I don't think we've met." },
+      { "role": "user", "target": "Nice to meet you I am Nam", "phonetic": "/naɪs tuː miːt juː aɪ æm næm/" },
+      { "role": "teacher", "content": "Nice to meet you too. Are you new here?" },
+      { "role": "user", "target": "Yes it is my first day", "phonetic": "/jɛs ɪt ɪz maɪ fɜːrst deɪ/" }
     ]
   },
   {
@@ -19,8 +21,150 @@
     "topic": "Lifestyle",
     "image": "https://cdn-icons-png.flaticon.com/512/2935/2935413.png",
     "dialogue": [
-      { "role": "teacher", "content": "What can I get for you today?" },
-      { "role": "user", "target": "I would like a cappuccino", "phonetic": "/ˌkæp.uˈtʃiː.noʊ/" }
+      { "role": "teacher", "content": "Good morning! What can I get for you?" },
+      { "role": "user", "target": "I would like a cappuccino please", "phonetic": "/aɪ wʊd laɪk ə ˌkæp.uˈtʃiː.noʊ pliːz/" },
+      { "role": "teacher", "content": "Hot or iced?" },
+      { "role": "user", "target": "Hot please and no sugar", "phonetic": "/hɑːt pliːz ænd noʊ ˈʃʊɡ.ər/" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Job Interview (IT)",
+    "desc": "Phỏng vấn xin việc ngành IT",
+    "level": "A2",
+    "topic": "Work",
+    "image": "https://cdn-icons-png.flaticon.com/512/3067/3067451.png",
+    "dialogue": [
+      { "role": "teacher", "content": "Tell me a little about yourself." },
+      { "role": "user", "target": "I am a software engineer", "phonetic": "/aɪ æm ə ˈsɔːftwɛr ˌɛndʒɪˈnɪr/" },
+      { "role": "teacher", "content": "What language do you use?" },
+      { "role": "user", "target": "I mainly code in Java and JavaScript", "phonetic": "/aɪ ˈmeɪnli koʊd ɪn ˈdʒɑːvə ænd ˈdʒɑːvəskrɪpt/" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Taking a Taxi",
+    "desc": "Bắt xe và chỉ đường",
+    "level": "A1",
+    "topic": "Travel",
+    "image": "https://cdn-icons-png.flaticon.com/512/2554/2554978.png",
+    "dialogue": [
+      { "role": "teacher", "content": "Where are you heading to?" },
+      { "role": "user", "target": "Please take me to the airport", "phonetic": "/pliːz teɪk miː tuː ðə ˈɛrpɔːrt/" },
+      { "role": "teacher", "content": "Which terminal?" },
+      { "role": "user", "target": "Terminal two please", "phonetic": "/ˈtɜːrmɪnl tuː pliːz/" }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Hotel Check-in",
+    "desc": "Thủ tục nhận phòng",
+    "level": "A1",
+    "topic": "Travel",
+    "image": "https://cdn-icons-png.flaticon.com/512/3009/3009489.png",
+    "dialogue": [
+      { "role": "teacher", "content": "Welcome. Do you have a reservation?" },
+      { "role": "user", "target": "I have a booking under Nam", "phonetic": "/aɪ hæv ə ˈbʊkɪŋ ˈʌndər næm/" },
+      { "role": "teacher", "content": "Here is your key. Room 305." },
+      { "role": "user", "target": "What time is breakfast served", "phonetic": "/wʌt taɪm ɪz ˈbrɛkfəst sɜːrvd/" }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Tech Support",
+    "desc": "Báo cáo sự cố máy tính",
+    "level": "A2",
+    "topic": "Work",
+    "image": "https://cdn-icons-png.flaticon.com/512/2885/2885417.png",
+    "dialogue": [
+      { "role": "teacher", "content": "IT Support. How can I help?" },
+      { "role": "user", "target": "My internet is not working", "phonetic": "/maɪ ˈɪntərnɛt ɪz nɑːt ˈwɜːrkɪŋ/" },
+      { "role": "teacher", "content": "Have you tried restarting it?" },
+      { "role": "user", "target": "Yes but it is still down", "phonetic": "/jɛs bʌt ɪt ɪz stɪl daʊn/" }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Shopping for Clothes",
+    "desc": "Mua sắm quần áo",
+    "level": "A1",
+    "topic": "Lifestyle",
+    "image": "https://cdn-icons-png.flaticon.com/512/2331/2331716.png",
+    "dialogue": [
+      { "role": "teacher", "content": "Can I help you find anything?" },
+      { "role": "user", "target": "I am looking for a white shirt", "phonetic": "/aɪ æm ˈlʊkɪŋ fɔːr ə waɪt ʃɜːrt/" },
+      { "role": "teacher", "content": "What is your size?" },
+      { "role": "user", "target": "Medium please", "phonetic": "/ˈmiːdiəm pliːz/" }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "At the Doctor",
+    "desc": "Khai báo triệu chứng bệnh",
+    "level": "A2",
+    "topic": "Health",
+    "image": "https://cdn-icons-png.flaticon.com/512/3004/3004458.png",
+    "dialogue": [
+      { "role": "teacher", "content": "What seems to be the problem?" },
+      { "role": "user", "target": "I have a bad headache", "phonetic": "/aɪ hæv ə bæd ˈhɛdeɪk/" },
+      { "role": "teacher", "content": "Do you have a fever?" },
+      { "role": "user", "target": "Yes I feel very hot", "phonetic": "/jɛs aɪ fiːl ˈvɛri hɑːt/" }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Asking for Wifi",
+    "desc": "Hỏi mật khẩu Wifi",
+    "level": "A1",
+    "topic": "Social",
+    "image": "https://cdn-icons-png.flaticon.com/512/93/93158.png",
+    "dialogue": [
+      { "role": "teacher", "content": "Here is your tea. Anything else?" },
+      { "role": "user", "target": "What is the wifi password", "phonetic": "/wʌt ɪz ðə ˈwaɪfaɪ ˈpæswɜːrd/" },
+      { "role": "teacher", "content": "It is written on the menu." },
+      { "role": "user", "target": "Thank you very much", "phonetic": "/ˈθæŋk juː ˈvɛri mʌtʃ/" }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Asking for Help",
+    "desc": "Nhờ giúp đỡ khi gặp khó khăn",
+    "level": "A1",
+    "topic": "Social",
+    "image": "https://cdn-icons-png.flaticon.com/512/4213/4213642.png",
+    "dialogue": [
+      { "role": "teacher", "content": "You look lost. Are you okay?" },
+      { "role": "user", "target": "Can you help me please", "phonetic": "/kæn juː hɛlp miː pliːz/" },
+      { "role": "teacher", "content": "Sure. What do you need?" },
+      { "role": "user", "target": "Where is the nearest bank", "phonetic": "/wɛr ɪz ðə ˈnɪrɪst bæŋk/" }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Date Night",
+    "desc": "Hội thoại hẹn hò cơ bản",
+    "level": "A2",
+    "topic": "Social",
+    "image": "https://cdn-icons-png.flaticon.com/512/2503/2503508.png",
+    "dialogue": [
+      { "role": "teacher", "content": "You look great tonight." },
+      { "role": "user", "target": "Thank you you look great too", "phonetic": "/ˈθæŋk juː juː lʊk ɡreɪt tuː/" },
+      { "role": "teacher", "content": "Shall we grab some dinner?" },
+      { "role": "user", "target": "I would love that", "phonetic": "/aɪ wʊd lʌv ðæt/" }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Project Deadline",
+    "desc": "Thảo luận công việc nhóm",
+    "level": "A2",
+    "topic": "Work",
+    "image": "https://cdn-icons-png.flaticon.com/512/1087/1087815.png",
+    "dialogue": [
+      { "role": "teacher", "content": "When is the project due?" },
+      { "role": "user", "target": "The deadline is next Friday", "phonetic": "/ðə ˈdɛdlaɪn ɪz nɛkst ˈfraɪdeɪ/" },
+      { "role": "teacher", "content": "Are we on track?" },
+      { "role": "user", "target": "Yes we are almost done", "phonetic": "/jɛs wiː ɑːr ˈɔːlmoʊst dʌn/" }
     ]
   }
 ]
