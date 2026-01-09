@@ -3,78 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NativeFlow Pro</title>
-    
+    <title>NativeFlow Final</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#58CC02',
-                        dark: '#46A302',
-                        surface: '#ffffff',
-                        bg: '#F3F4F6'
-                    },
-                    fontFamily: {
-                        sans: ['Nunito', 'sans-serif'],
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { primary: '#58CC02', dark: '#46A302' } } } }
     </script>
-
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
     <style>
-        /* Một chút CSS nhỏ để fix lỗi cuộn trang trên mobile */
         body { font-family: 'Nunito', sans-serif; -webkit-tap-highlight-color: transparent; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .bubble-pop { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .listening { animation: pulse 1.5s infinite; background-color: #EF4444 !important; }
         @keyframes pop { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-        @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); } 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
-        .mic-active { animation: pulse-ring 1.5s infinite; background-color: #EF4444 !important; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); } 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
     </style>
 </head>
-<body class="bg-bg text-gray-800 h-screen flex flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-white relative">
+<body class="bg-gray-100 h-screen flex flex-col max-w-md mx-auto shadow-2xl bg-white relative overflow-hidden">
 
-    <header id="app-header" class="flex justify-between items-center p-4 bg-white/90 backdrop-blur-md sticky top-0 z-20 border-b border-gray-100 hidden">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
-                <img src="https://ui-avatars.com/api/?name=User&background=random" class="w-full h-full object-cover">
-            </div>
-            <div>
-                <div class="text-xs text-gray-400 font-bold tracking-wider">WELCOME</div>
-                <div class="font-extrabold text-sm">Learner</div>
-            </div>
-        </div>
-        <div class="flex items-center gap-2 bg-yellow-50 text-yellow-600 px-3 py-1.5 rounded-full font-bold text-sm border border-yellow-200">
+    <header id="app-header" class="flex justify-between items-center p-4 bg-white/90 backdrop-blur-md z-20 border-b border-gray-100 hidden">
+        <div class="font-extrabold text-xl text-primary tracking-tight">NativeFlow</div>
+        <div class="flex items-center gap-2 bg-yellow-50 text-yellow-600 px-3 py-1 rounded-full font-bold text-sm border border-yellow-200">
             <i class="fa-solid fa-fire"></i> <span id="streak-display">0</span>
         </div>
     </header>
 
-    <main id="main-view" class="flex-1 overflow-y-auto hide-scrollbar pb-24 relative"></main>
+    <main id="main-view" class="flex-1 overflow-y-auto hide-scrollbar relative"></main>
 
-    <nav id="bottom-nav" class="flex justify-around items-center h-[80px] bg-white border-t border-gray-100 absolute bottom-0 w-full z-30 hidden pb-2">
-        <button onclick="App.router('home')" class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition active">
-            <i class="fa-solid fa-house-chimney text-xl"></i>
-            <span class="text-[10px] font-bold">Home</span>
+    <nav id="bottom-nav" class="flex justify-around items-center h-[80px] bg-white border-t border-gray-100 z-30 hidden pb-2">
+        <button onclick="App.router('home')" class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-primary active">
+            <i class="fa-solid fa-map text-xl"></i>
+            <span class="text-[10px] font-bold">Lộ trình</span>
         </button>
-        <button onclick="App.router('rank')" class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition">
-            <i class="fa-solid fa-trophy text-xl"></i>
-            <span class="text-[10px] font-bold">Rank</span>
-        </button>
-        <button onclick="App.router('stats')" class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition">
+        <button onclick="App.router('stats')" class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
             <i class="fa-solid fa-chart-simple text-xl"></i>
-            <span class="text-[10px] font-bold">Stats</span>
+            <span class="text-[10px] font-bold">Thống kê</span>
         </button>
-        <button onclick="App.router('profile')" class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition">
+        <button onclick="App.router('profile')" class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-primary">
             <i class="fa-solid fa-user text-xl"></i>
-            <span class="text-[10px] font-bold">Profile</span>
+            <span class="text-[10px] font-bold">Hồ sơ</span>
         </button>
     </nav>
 
