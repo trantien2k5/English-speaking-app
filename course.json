@@ -1,1 +1,26 @@
-
+[
+  {
+    "id": 1,
+    "title": "Hello & Intro",
+    "desc": "Làm quen và chào hỏi cơ bản",
+    "level": "A1",
+    "topic": "Social",
+    "image": "https://cdn-icons-png.flaticon.com/512/3006/3006876.png",
+    "dialogue": [
+      { "role": "teacher", "content": "Hi there! I am your new neighbor." },
+      { "role": "user", "target": "Nice to meet you I am Nam", "phonetic": "/naɪs tuː miːt juː/" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Ordering Coffee",
+    "desc": "Gọi món tại Starbucks",
+    "level": "A1",
+    "topic": "Lifestyle",
+    "image": "https://cdn-icons-png.flaticon.com/512/2935/2935413.png",
+    "dialogue": [
+      { "role": "teacher", "content": "What can I get for you today?" },
+      { "role": "user", "target": "I would like a cappuccino", "phonetic": "/ˌkæp.uˈtʃiː.noʊ/" }
+    ]
+  }
+]
